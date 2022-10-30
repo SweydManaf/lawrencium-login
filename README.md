@@ -1,7 +1,7 @@
 # Página de login
  Apenas uma tela de login com grandiente azul feito com tkinter
  
- NB: Em desenvolvimento.
+ NB: Em desenvolvimento
 
 ## Pré-requisitos
 

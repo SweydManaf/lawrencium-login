@@ -1,4 +1,4 @@
-# Page login based on lawrencium gradient
+# Página de login
  Apenas uma tela de login com grandiente azul feito com tkinter
 
 ## Pré-requisitos

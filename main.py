@@ -6,7 +6,7 @@ from PIL import Image, ImageTk
 class Main:
     def __init__(self):
         self.root = Tk()
-        self.root.title('BEAUTY LOGIN')
+        self.root.title('LAWRENCIUM LOGIN')
         self.root.tk.call('source', 'azure.tcl')
         self.root.tk.call('set_theme', 'light')
 

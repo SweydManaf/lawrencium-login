@@ -27,7 +27,7 @@ class MainWindow:
         self.loginButton = ttk.Button(self.mainFrame, text='LOGIN', style='Accent.TButton')
         self.loginButton.configure(width=20)
 
-        self.orLoginLabel = ttk.Label(self.mainFrame, text='Or login with')
+        self.orLoginLabel = ttk.Label(self.mainFrame, text='Or login with', cursor='hand2')
 
         self.facebookButton = ttk.Button(self.mainFrame, text='Facebook')
         self.facebookButton.configure(width=15)

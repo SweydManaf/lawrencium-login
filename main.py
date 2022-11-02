@@ -12,9 +12,9 @@ class Main:
 
         # SET BACKGORUND IMAGE
         self.image = ImageTk.PhotoImage(Image.open('assets/Lawrencium.jpg'))
-        self.canvas = Canvas(self.root, width=610, height=int(self.root.winfo_screenheight() - 300))
+        self.canvas = Canvas(self.root, width=620, height=int(self.root.winfo_screenheight() - 290))
         self.canvas.grid(row=0, column=0)
-        self.createImage = self.canvas.create_image(0, 0, image=self.image, anchor='nw')
+        self.createImage = self.canvas.create_image(0, 0, image=self.image, anchor='n')
 
         # CONFIGURE THE WINDOW
         self.width = 610

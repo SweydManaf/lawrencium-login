@@ -1,6 +1,6 @@
 from tkinter import *
 from tkinter import ttk
-
+from tkinter import messagebox
 
 class MainWindow:
     def __init__(self, root):
@@ -11,20 +11,22 @@ class MainWindow:
         self.loginLabel = ttk.Label(self.mainFrame, text='LOGIN', font='Roboto 18 bold')
 
         self.emailVar = StringVar()
+        self.emailValidate = self.mainFrame.register(self.email_pattern)
         self.emailLabel = ttk.Label(self.mainFrame, text='Email ', font='Helvetica 12')
         self.emailEntry = ttk.Entry(self.mainFrame, textvariable=self.emailVar,
-                                    width=25)
+                                    width=25, validate='focusin', validatecommand=self.email_pattern)
 
         self.passwordVar = StringVar()
         self.passwrodLabel = ttk.Label(self.mainFrame, text='Password ', font='Helvetica 12')
         self.passwordEntry = ttk.Entry(self.mainFrame, textvariable=self.passwordVar,
-                                       width=25)
+                                       width=25, show='*')
 
         self.rememberVar = StringVar()
         self.checkRemember = ttk.Checkbutton(self.mainFrame, textvariable=self.rememberVar)
         self.labelRemember = ttk.Label(self.mainFrame, text='Remember me', font='Helvetica 11')
 
-        self.loginButton = ttk.Button(self.mainFrame, text='LOGIN', style='Accent.TButton')
+        self.loginButton = ttk.Button(self.mainFrame, text='LOGIN', style='Accent.TButton', 
+                                      command=self.login_function)
         self.loginButton.configure(width=20)
 
         self.orLoginLabel = ttk.Label(self.mainFrame, text='Or login with', cursor='hand2')
@@ -66,3 +68,16 @@ class MainWindow:
 
         self.signLabel.grid(row=7, column=0, columnspan=3, padx=(0, 90), pady=(20, 40), sticky='ns')
         self.signUpLabel.grid(row=7, column=1, columnspan=3, padx=(0, 70), pady=(20, 40), sticky='ns')
+
+    def email_pattern(self):
+        email = False
+        if email:
+            return True
+        else:
+            return False
+    
+    def login_function(self):
+        if self.emailVar.get() == 'abdulsweyd@gmail.com' and self.passwordVar.get() == '123':
+            messagebox.showinfo('Login', 'Your login was accepted.')
+        else:
+            messagebox.showerror('Login', 'Your login was not accepted.')

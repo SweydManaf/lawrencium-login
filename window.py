@@ -2,6 +2,8 @@ from tkinter import *
 from tkinter import ttk
 from tkinter import messagebox
 
+from PIL import Image, ImageTk
+
 class MainWindow:
     def __init__(self, root):
         # MAIN FRAME
@@ -31,10 +33,13 @@ class MainWindow:
 
         self.orLoginLabel = ttk.Label(self.mainFrame, text='Or login with', cursor='hand2')
 
-        self.facebookButton = ttk.Button(self.mainFrame, text='Facebook')
-        self.facebookButton.configure(width=15)
-        self.googleButton = ttk.Button(self.mainFrame, text='Google')
-        self.googleButton.configure(width=15)
+        self.facebookButton = ttk.Button(self.mainFrame, text='  Facebook', command=self.facebook_button_function)
+        self.facebookPNG = ImageTk.PhotoImage(Image.open('assets/facebook.png').resize((20, 20)))
+        self.facebookButton.configure(width=15, image=self.facebookPNG, compound=LEFT)
+        
+        self.googleButton = ttk.Button(self.mainFrame, text='  Google', command=self.google_button_funtion)
+        self.googlePNG = ImageTk.PhotoImage(Image.open('assets/google.png').resize((20, 20)))
+        self.googleButton.configure(width=15, image=self.googlePNG, compound=LEFT)
 
         self.signLabel = ttk.Label(self.mainFrame, text='Not a member?', font='Helvetica 11')
         self.signUpLabel = ttk.Label(self.mainFrame, text='Sign up now', font='Helvetica 11 underline',
@@ -81,3 +86,9 @@ class MainWindow:
             messagebox.showinfo('Login', 'Your login was accepted.')
         else:
             messagebox.showerror('Login', 'Your login was not accepted.')
+            
+    def facebook_button_function(self):
+        pass
+    
+    def google_button_funtion(self):
+        pass
